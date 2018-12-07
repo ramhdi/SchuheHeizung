@@ -1,0 +1,11 @@
+{
+  "additionalFiles": "/build/preproc/ctags_target_for_gcc_minus_e.cpp,/build/sketch/SchuheHeizung_v1.ino.cpp",
+  "builtInLibrariesFolders": "/home/ramhdi/arduino-1.8.6/libraries",
+  "customBuildProperties": "build.path=/home/ramhdi/Documents/SchuheHeizung_v1/build,build.warn_data_percentage=75,runtime.tools.xtensa-lx106-elf-gcc.path=/home/ramhdi/.arduino15/packages/esp8266/tools/xtensa-lx106-elf-gcc/1.20.0-26-gb404fb9-2,runtime.tools.esptool.path=/home/ramhdi/.arduino15/packages/esp8266/tools/esptool/0.4.13,runtime.tools.mkspiffs.path=/home/ramhdi/.arduino15/packages/esp8266/tools/mkspiffs/0.2.0",
+  "fqbn": "esp8266:esp8266:nodemcuv2:CpuFrequency=80,VTable=flash,FlashSize=4M1M,LwIPVariant=v2mss536,Debug=Disabled,DebugLevel=None____,FlashErase=none,UploadSpeed=115200",
+  "hardwareFolders": "/home/ramhdi/arduino-1.8.6/hardware,/home/ramhdi/.arduino15/packages,/home/ramhdi/Arduino/hardware",
+  "otherLibrariesFolders": "/home/ramhdi/Arduino/libraries",
+  "runtime.ide.version": "10806",
+  "sketchLocation": "/home/ramhdi/Documents/SchuheHeizung_v1/SchuheHeizung_v1.ino",
+  "toolsFolders": "/home/ramhdi/arduino-1.8.6/tools-builder,/home/ramhdi/arduino-1.8.6/hardware/tools/avr,/home/ramhdi/.arduino15/packages"
+}
