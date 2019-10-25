@@ -1,9 +1,9 @@
 /*
-Low-cost Sous vide Cooker
-version 1.0
-Using libraries:
-- Adafruit SSD1306 for OLED display - learn.adafruit.com
-- Rotary encoder switch - www.belajarduino.com
+  Low-cost Sous vide Cooker
+  version 1.0
+  Using libraries:
+  - Adafruit SSD1306 for OLED display - learn.adafruit.com
+  - Rotary encoder switch - www.belajarduino.com
 */
 
 #include <SPI.h>
@@ -28,7 +28,8 @@ MAX6675 thermocouple(SCK_PIN, CS_PIN, SO_PIN);
 int mode;
 const int REQ_TEMPERATURE = 0;
 const int REQ_DURATION = 1;
-const int HEATING = 2;
+const int PREHEATING = 2;
+const int HEATING = 3;
 
 int HEATER_PIN = 4;
 int BLOWER_PIN = 5;
@@ -149,11 +150,59 @@ void loop() {
       digitalWrite(BLOWER_PIN, HIGH);
 
       encoderValue = 0;
-      mode = HEATING;
+      mode = PREHEATING;
     }
     //Serial.println(mode);
     display.display();
     delay(250);
+  }
+
+  else if (mode == PREHEATING) {
+    // preheating (waiting for the heater to reach target temperature)
+    time_now = millis();
+    swState = digitalRead(sw);
+
+    // read temperature
+    unsigned long currentMillisReadTemp = millis();
+    if (currentMillisReadTemp - previousMillisReadTemp >= 1000) {
+      previousMillisReadTemp = currentMillisReadTemp;
+      temp_sensor = thermocouple.readCelsius();
+    }
+#ifdef DEBUG
+    Serial.println(temp_sensor);
+#endif
+    if ((time_now - time_start > duration) || !swState) {
+      display.clearDisplay();
+      display.setTextSize(2);
+      display.setCursor(0, 0);
+      display.print("Finished");
+#ifdef DEBUG
+      Serial.println(F("Finished cooking!"));
+#endif
+      digitalWrite(BLOWER_PIN, LOW);
+      digitalWrite(HEATER_PIN, LOW);
+      display.display();
+      delay(2000);
+      mode = REQ_TEMPERATURE;
+    } else {
+      String templeft = String((int)temp_sensor) + " -> " + String((int)temp_desired);
+      display.clearDisplay();
+      display.setTextSize(2);
+      display.setCursor(0, 0);
+      display.print("Preheating");
+      display.setCursor(0, 20);
+      display.print(templeft);
+
+      // waiting for the heater to reach target temperature
+      if (temp_sensor < temp_desired) {
+        digitalWrite(HEATER_PIN, HIGH);
+      } else {
+        // switch mode to heating
+        digitalWrite(HEATER_PIN, LOW);
+        mode = HEATING;
+      }
+    }
+    display.display();
   }
 
   else if (mode == HEATING) {
@@ -173,7 +222,7 @@ void loop() {
     if ((time_now - time_start > duration) || !swState) {
       display.clearDisplay();
       display.setTextSize(2);
-      display.setCursor(0,0);
+      display.setCursor(0, 0);
       display.print("Finished");
 #ifdef DEBUG
       Serial.println(F("Finished cooking!"));
@@ -193,7 +242,7 @@ void loop() {
         unsigned int time_left_mins = (time_left / 60) % 60;
         unsigned int time_left_secs = time_left % 60;
 
-        String templeft = String((int)temp_sensor) + " -> " + String((int)temp_desired);      
+        String templeft = String((int)temp_sensor) + " -> " + String((int)temp_desired);
         String timeleft = "";
         if (time_left_hrs != 0) {
           timeleft += String(time_left_hrs);
@@ -207,9 +256,9 @@ void loop() {
         timeleft += String(time_left_secs); timeleft += "d";
         display.clearDisplay();
         display.setTextSize(2);
-        display.setCursor(0,0);
+        display.setCursor(0, 0);
         display.print(timeleft);
-        display.setCursor(0,20);
+        display.setCursor(0, 20);
         display.print(templeft);
 #ifdef DEBUG
         Serial.println(timeleft);

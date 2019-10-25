@@ -1,0 +1,82 @@
+[
+  {
+    "Sourcefile": "",
+    "Include": "",
+    "Includepath": "C:\\Users\\ASUS\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.6.20\\cores\\arduino"
+  },
+  {
+    "Sourcefile": "",
+    "Include": "",
+    "Includepath": "C:\\Users\\ASUS\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.6.20\\variants\\eightanaloginputs"
+  },
+  {
+    "Sourcefile": "d:\\Gits\\SchuheHeizung\\build\\sketch\\SchuheHeizung_v2.ino.cpp",
+    "Include": "SPI.h",
+    "Includepath": "C:\\Users\\ASUS\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.6.20\\libraries\\SPI\\src"
+  },
+  {
+    "Sourcefile": "d:\\Gits\\SchuheHeizung\\build\\sketch\\SchuheHeizung_v2.ino.cpp",
+    "Include": "Wire.h",
+    "Includepath": "C:\\Users\\ASUS\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.6.20\\libraries\\Wire\\src"
+  },
+  {
+    "Sourcefile": "d:\\Gits\\SchuheHeizung\\build\\sketch\\SchuheHeizung_v2.ino.cpp",
+    "Include": "Adafruit_GFX.h",
+    "Includepath": "D:\\Google Drive\\Electronics and Automation\\Arduino\\libraries\\Adafruit_GFX_Library"
+  },
+  {
+    "Sourcefile": "d:\\Gits\\SchuheHeizung\\build\\sketch\\SchuheHeizung_v2.ino.cpp",
+    "Include": "Adafruit_SSD1306.h",
+    "Includepath": "D:\\Google Drive\\Electronics and Automation\\Arduino\\libraries\\Adafruit_SSD1306"
+  },
+  {
+    "Sourcefile": "d:\\Gits\\SchuheHeizung\\build\\sketch\\SchuheHeizung_v2.ino.cpp",
+    "Include": "max6675.h",
+    "Includepath": "D:\\Google Drive\\Electronics and Automation\\Arduino\\libraries\\MAX6675_library"
+  },
+  {
+    "Sourcefile": "d:\\Gits\\SchuheHeizung\\build\\sketch\\SchuheHeizung_v2.ino.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "C:\\Users\\ASUS\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.6.20\\libraries\\SPI\\src\\SPI.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "C:\\Users\\ASUS\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.6.20\\libraries\\Wire\\src\\Wire.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "C:\\Users\\ASUS\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.6.20\\libraries\\Wire\\src\\utility\\twi.c",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "D:\\Google Drive\\Electronics and Automation\\Arduino\\libraries\\Adafruit_GFX_Library\\Adafruit_GFX.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "D:\\Google Drive\\Electronics and Automation\\Arduino\\libraries\\Adafruit_GFX_Library\\Adafruit_SPITFT.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "D:\\Google Drive\\Electronics and Automation\\Arduino\\libraries\\Adafruit_GFX_Library\\glcdfont.c",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "D:\\Google Drive\\Electronics and Automation\\Arduino\\libraries\\Adafruit_SSD1306\\Adafruit_SSD1306.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "D:\\Google Drive\\Electronics and Automation\\Arduino\\libraries\\MAX6675_library\\max6675.cpp",
+    "Include": "",
+    "Includepath": ""
+  }
+]
